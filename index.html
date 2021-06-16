@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wuil</title>
+  </head>
+  <style>
+    * {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      width: 60%;
+      height: 60vh;
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+      color: #e47f32;
+      font-weight: 800;
+      font-size: 3rem;
+      margin: 40px 0px;
+    }
+    h4 {
+      text-align: center;
+    }
+    section {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+    button {
+      margin: 20px 0px;
+      padding: 15px 20px;
+      text-align: center;
+      color: white;
+      background: #e47f32;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+    strong {
+      margin: 10px 0px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .choose {
+      text-align: center;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      position: fixed;
+      z-index: -1000000;
+      opacity: 0;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.8s ease-in-out;
+    }
+    .choose h1 {
+      margin: 20px;
+    }
+    .choose.show {
+      z-index: 100000000;
+      opacity: 1;
+      transition: all 0.8s ease-in-out;
+    }
+    @media screen and (max-width: 400px) {
+      main {
+        width: 100vw;
+      }
+    }
+  </style>
+  <body>
+    <main>
+      <h2>Hola Wuildey</h2>
+      <strong>He aqui, algunas de tus frases celebres</strong>
+      <h4>Elige una opcion</h4>
+      <section>
+        <button id="one">Opcion 1</button>
+        <button id="two">Opcion 2</button>
+        <!-- <button id="three">Opcion 3</button> -->
+      </section>
+    </main>
+    <section class="choose" id="chooseOne">
+      <h1>En el cuello sin esponja por que me da cosquillas</h1>
+      <button id="close1">Salir</button>
+    </section>
+    <section class="choose" id="chooseTwo">
+      <h1>Buenas noches, que pase buena miche!</h1>
+      <button id="close2">Salir</button>
+    </section>
+    <!-- <section class="choose" id="chooseThree">
+      <h1>
+        SAAAAAAAACRJJJJJJREEEEE <br />
+        BLUUUUUUUUUUU
+      </h1>
+      <button id="close3">Salir</button>
+    </section> -->
+  </body>
+  <script>
+    const opcion1 = document.getElementById("chooseOne");
+    const opcion2 = document.getElementById("chooseTwo");
+    const opcion3 = document.getElementById("chooseThree");
+
+    const boton1 = document.getElementById("one");
+    const boton2 = document.getElementById("two");
+    const boton3 = document.getElementById("three");
+
+    const closeOption1 = document.getElementById("close1");
+    const closeOption2 = document.getElementById("close2");
+    const closeOption3 = document.getElementById("close3");
+
+    boton1.addEventListener("click", () => {
+      opcion1.classList.add("show");
+    });
+    boton2.addEventListener("click", () => {
+      opcion2.classList.add("show");
+    });
+    closeOption1.addEventListener("click", () => {
+      opcion1.classList.remove("show");
+    });
+    closeOption2.addEventListener("click", () => {
+      opcion2.classList.remove("show");
+    });
+
+    closeOption3.addEventListener("click", () => {
+      opcion3.classList.remove("show");
+    });
+
+    boton3.addEventListener("click", () => {
+      opcion3.classList.add("show");
+    });
+  </script>
+</html>
